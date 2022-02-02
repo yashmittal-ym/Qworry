@@ -17,7 +17,7 @@
 clone the repo by :
 ```sh
 git clone "https://github.com/yashmittal-ym/Qworry.git"
-cd Qwoory
+cd Qworry
 ```
 
 Install dependencies: 
