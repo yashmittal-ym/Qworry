@@ -1,8 +1,7 @@
-# Interview-Scheduler [demo-website](https://interview-manage.herokuapp.com/)
-### NOTE:
-Heroku does not provide SMTP services so Email notifications is not supported in this demo.
+# Interview-Scheduler 
 
-### The aim of the project is to easily schedule interviews.
+
+### The aim of the project is to easily schedule queues.
 
 
 #### Tech Used:
