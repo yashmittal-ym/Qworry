@@ -16,8 +16,8 @@
 
 clone the repo by :
 ```sh
-git clone "https://github.com/yashmittal-ym/Interview-Scheduler.git"
-cd Interview-Scheduler
+git clone "https://github.com/yashmittal-ym/Qworry.git"
+cd Qwoory
 ```
 
 Install dependencies: 
@@ -25,7 +25,6 @@ Install dependencies:
 ```sh
 pip install -r requirements.txt
 ```
-update email and password in app.py (line 14 and 15) for sending emails to the user via SMTP 
 
 get started: 
 
