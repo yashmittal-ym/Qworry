@@ -53,6 +53,7 @@ def verify():
     inputpnr = request.form['inputPnr']
     global PNR
     PNR=inputpnr
+    print('this is PNR: ', PNR)
     q1=Passengers.query.filter_by(pnr=inputpnr).first()
     if q1:
         getOtpApi(q1.mobile)
@@ -78,15 +79,29 @@ def validate():
 
 @app.route('/checkin',methods=['POST'])
 def checkin():
-    # allInterviews = Interviews.query.all() 
+    global PNR
     checkin = request.form['checkin']
     if checkin == 'Yes':
+        query=Passengers.query.filter_by(pnr=PNR).first()
+        print(query.pnr, PNR)
+        print(PNR)
+        q1=queue(pnr=query.pnr, FName=query.FName, LName = query.LName, mobile=query.mobile, Email=query.Email);
+        db.session.add(q1)
+        db.session.commit()
         return redirect("/status")
     else:
         return redirect("/")
 
 @app.route('/status')
 def status():
+    global PNR
+    allPassengers=queue.query.all()
+    idx=0
+    for val in allPassengers:
+        print(val.pnr, PNR)
+        idx+=1
+        if(str(val.pnr) == str(PNR)): 
+            return render_template('welcome.html', FName=val.FName, LName=val.LName,position=idx, ET=3*idx)
     return render_template('welcome.html')
 
 
