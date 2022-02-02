@@ -161,8 +161,11 @@ def checkin():
     if checkin == 'Yes':
         query=Passengers.query.filter_by(pnr=PNR).first()
         q = queue.query.all()
-        sz=len(q)+1
-        print(sz)
+        sz=1
+        if q:
+            sz=int(q[-1].sno)+1
+        print('size\n\n', sz)
+        print('\n\n')
         q1=queue(sno = sz, pnr=query.pnr, FName=query.FName, LName = query.LName, mobile=query.mobile, Email=query.Email);
         db.session.add(q1)
         db.session.commit()
@@ -196,7 +199,7 @@ def getOtpApi(number):
     # auth_token = 'f6711bbd91b72a96438ebe9afff6bacb'
     # client = Client(account_sid,auth_token)
     otp = generateOtp()
-    print(otp,number)
+    print('size of queue', otp,number)
     # body = 'Your OTP is '+ str(otp)
     # message = client.messages \
     #             .create(
@@ -215,7 +218,7 @@ def notifyUser(number):
     auth_token = 'f6711bbd91b72a96438ebe9afff6bacb'
     client = Client(account_sid,auth_token)
     body = 'Be ready with your luggage, You are next in the queue! '
-    print('notified', number)
+    print('size of queue', 'notified', number)
     # message = client.messages \
     #             .create(
     #                  body=body,
@@ -233,7 +236,7 @@ def getOtpApiOnEmail(email):
     # auth_token = 'f6711bbd91b72a96438ebe9afff6bacb'
     # client = Client(account_sid,auth_token)
     otp = generateOtp()
-    print(otp,email)
+    print('size of queue', otp,email)
     # body = 'Your OTP is '+ str(otp)
     # message = client.messages \
     #             .create(
