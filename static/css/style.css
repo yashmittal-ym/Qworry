@@ -1,3 +1,64 @@
-body{
-    /* background-color: red; */
+/* @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css); */
+
+
+
+.bg-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    color: #181d31;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  #logo{
+    width: 20rem;
+  }
+  #welcomelogo{
+      width: 15rem;
+  }
+.app-logo{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}  
+
+.flex-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.align-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-space {
+    margin: 5rem 0 2rem 0;
+}
+.l-space {
+    margin: 2rem 0 3rem 0;
+}
+.text-c {
+    text-align: center;
+}
+
+@media only screen and (min-width: 600px){
+    .pc-view {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+}
+  
