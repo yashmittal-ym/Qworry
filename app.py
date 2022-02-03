@@ -10,6 +10,7 @@ from sqlalchemy import true
 from werkzeug.utils import secure_filename
 import re
 import random
+from flask import Flask, send_from_directory
 
 
 app = Flask(__name__)
@@ -280,7 +281,9 @@ def getOtpApiOnEmail(email):
     
 
 
-
+@app.route("/static/<path:path>")
+def static_dir(path):
+    return send_from_directory("static", path)
 
 
 
