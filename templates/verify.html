@@ -3,11 +3,14 @@
 {% block body %}
 
 <div class="container my-3">
+  <div class="app-logo">
+    <img id="logo" src="{{url_for('static',filename = 'logo.png')}}"/>
+  </div>
   <div class="mt-3">
     {%if role=='admin'%}
-      <p class="font-monospace fs-1">Enter OTP sent to your registerd mobiles</p>
+      <p class="flex-c font-monospace text-c fs-3 p-space">Enter OTP sent to your registerd mobile no</p>
     {% else %}
-      <p class="font-monospace fs-1">Enter OTP sent to your registerd mobile</p>
+      <p class="flex-c font-monospace text-c fs-3 p-space">Enter OTP sent to your registerd mobile no</p>
     {% endif %}
   <div class="mt-3">
     {%if err%}
@@ -20,19 +23,19 @@
     <form action="/admin/validate" method="POST">
       <div class="form-group">
         <!-- <label for="pnr">Enter your PNR</label> -->
-        <input type="text" class="form-control" name="inputOtp" id="inputOtp" placeholder="" >
+        <input type="text" class="form-control" style="text-align: center;" name="inputOtp" id="inputOtp" placeholder="" >
       </div>
-      <div class="mt-4">
-      <button type="submit" class="btn btn-dark">Submit</button>
+      <div class="flex-c mt-4">
+      <button type="submit" class="btn btn-success">Submit</button>
     </form>
     {%else%}
     <form action="/validate" method="POST">
       <div class="form-group">
         <!-- <label for="pnr">Enter your PNR</label> -->
-        <input type="text" class="form-control" name="inputOtp" id="inputOtp" placeholder="" >
+        <input type="text" class="form-control" style="text-align: center;" name="inputOtp" id="inputOtp" placeholder="" >
       </div>
-      <div class="mt-4">
-      <button type="submit" class="btn btn-dark">Submit</button>
+      <div class="flex-c mt-4">
+      <button type="submit" class="btn btn-success">Submit</button>
     </form>
     {% endif %}
 

@@ -3,16 +3,21 @@
 {% block body %}
 
 <div class="container my-3">
-  <div class="mt-3">
-    <p class="font-monospace fs-1">Enter Your PNR</p>
-  <div class="mt-3">
-  {%if msg=="Checked In"%}
-    <div class="alert alert-dark" role="alert">
+  {%if msg%}
+  <div class="app-logo">
+    <img id="logo" src="{{url_for('static',filename = 'logo.png')}}"/>
+  </div>
+  <div class="align-c">
+    <div class="alert alert-dark flex-c fs-2" style="text-align: center; margin-top: 7rem;" role="alert">
       You have already checked in.
       <br>
       Have a great journey!
     </div>
+  </div>
   {%else%}
+  <div class="mt-3">
+    <p class="font-monospace fs-1">Enter Your PNR</p>
+  <div class="mt-3">
   <form action="/checkin" method="POST">
     <div class="form-group">
       <!-- <label for="pnr">Enter your PNR</label> -->

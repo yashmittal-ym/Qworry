@@ -3,8 +3,13 @@
 {% block body %}
 
 <div class="container my-3">
-   <h2>Welcome {{FName}} {{LName}}</h2>
-   <p class="font-monospace fs-1">All passengers</p>
+    <p class="font-monospace fs-3 flex-c">Welcome, <b>{{FName}} {{LName}}</b></p>
+    <div class="mt-4">
+    <div class="app-logo">
+        <img id="welcomelogo" src="{{url_for('static',filename = 'logo.png')}}"/>
+    </div>
+    <div class="mt-4">
+    <p class="font-monospace fs-2 flex-c">All passengers</p>
 
     {% if allUsers|length == 100 %}
 
@@ -15,25 +20,25 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">SNo</th>
-                <th scope="col">PNR</th>
-                <th scope="col">Name</th>
-                <th scope="col">Check In</th>
-                <th scope="col">Notify</th>
+                <th scope="col" class="fs-4">SNo</th>
+                <th scope="col" class="fs-4">PNR</th>
+                <th scope="col" class="fs-4">Name</th>
+                <th scope="col" class="fs-4">Check In</th>
+                <th scope="col" class="fs-4">Notify</th>
             </tr>
         </thead>
 
         <tbody>
             {% for user in allUsers %}
             <tr>
-                <th scope="row">{{loop.index}}</th>
-                <td>{{user.pnr}}</td>
-                <td>{{user.FName}} {{user.LName}}</td>
-                <td>
-                    <a href="/admin/checked/{{user.pnr}}" type="button" class="btn btn-outline-dark btn-sm mx-1">CHECK IN</button>
+                <td scope="row" class="fs-5">{{loop.index}}</td>
+                <td class="fs-5">{{user.pnr}}</td>
+                <td class="fs-5">{{user.FName}} {{user.LName}}</td>
+                <td class="fs-5">
+                    <a href="/admin/checked/{{user.pnr}}" type="button" class="btn btn-success">CHECK IN</button>
                 </td>
-                <td>
-                    <a href="/admin/notify/{{user.pnr}}" type="button" class="btn btn-outline-dark btn-sm mx-1">NOTIFY</button>
+                <td class="fs-5">
+                    <a href="/admin/notify/{{user.pnr}}" type="button" class="btn btn-warning">NOTIFY</button>
                 </td>
             </tr>
 
