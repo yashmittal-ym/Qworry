@@ -1,4 +1,4 @@
-# Interview-Scheduler 
+# Queue-Scheduler 
 
 
 ### The aim of the project is to easily schedule queues.
